@@ -946,5 +946,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "app0"
+  "defaultProject": "app1"
 }
