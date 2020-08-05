@@ -1,0 +1,23 @@
+export const routes = [
+    { path: '0', loadChildren: () => import('@largerepo/lib0').then(m => m.Childlib0Module) },
+    { path: '1', loadChildren: () => import('@largerepo/lib1').then(m => m.Childlib1Module) },
+    { path: '1', loadChildren: () => import('@largerepo/lib2').then(m => m.Childlib2Module) },
+    { path: '2', loadChildren: () => import('@largerepo/lib3').then(m => m.Childlib3Module) },
+    { path: '3', loadChildren: () => import('@largerepo/lib4').then(m => m.Childlib4Module) },
+    { path: '4', loadChildren: () => import('@largerepo/lib5').then(m => m.Childlib5Module) },
+    { path: '5', loadChildren: () => import('@largerepo/lib6').then(m => m.Childlib6Module) },
+    { path: '6', loadChildren: () => import('@largerepo/lib7').then(m => m.Childlib7Module) },
+    { path: '7', loadChildren: () => import('@largerepo/lib8').then(m => m.Childlib8Module) },
+    { path: '8', loadChildren: () => import('@largerepo/lib9').then(m => m.Childlib9Module) },
+    { path: '9', loadChildren: () => import('@largerepo/lib10').then(m => m.Childlib0Module) },
+    { path: '10', loadChildren: () => import('@largerepo/lib11').then(m => m.Childlib1Module) },
+    { path: '11', loadChildren: () => import('@largerepo/lib12').then(m => m.Childlib2Module) },
+    { path: '12', loadChildren: () => import('@largerepo/lib13').then(m => m.Childlib3Module) },
+    { path: '13', loadChildren: () => import('@largerepo/lib14').then(m => m.Childlib4Module) },
+    { path: '14', loadChildren: () => import('@largerepo/lib15').then(m => m.Childlib5Module) },
+    { path: '15', loadChildren: () => import('@largerepo/lib16').then(m => m.Childlib6Module) },
+    { path: '16', loadChildren: () => import('@largerepo/lib17').then(m => m.Childlib7Module) },
+    { path: '17', loadChildren: () => import('@largerepo/lib18').then(m => m.Childlib8Module) },
+    { path: '18', loadChildren: () => import('@largerepo/lib19').then(m => m.Childlib9Module) },
+    { path: '*', redirectTo: '1' }
+];

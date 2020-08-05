@@ -52,9 +52,14 @@ import { Lib0childlib4component48Component } from './lib0childlib4component48/li
 import { Lib0childlib4component49Component } from './lib0childlib4component49/lib0childlib4component49.component';
 import { Lib0childlib4parentComponent } from './lib0childlib4parent/lib0childlib4parent.component';
 export { Lib0childlib4parentComponent } from './lib0childlib4parent/lib0childlib4parent.component';
-
+import { RouterModule }from '@angular/router';
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild([
+      {path: '', component: Lib0childlib4parentComponent}
+    ])
+  ],
   declarations: [
     Lib0childlib4component0Component,
     Lib0childlib4component1Component,

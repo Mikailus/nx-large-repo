@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule }from '@angular/router';
 import { Lib1childlib9component0Component } from './lib1childlib9component0/lib1childlib9component0.component';
 import { Lib1childlib9component1Component } from './lib1childlib9component1/lib1childlib9component1.component';
 import { Lib1childlib9component2Component } from './lib1childlib9component2/lib1childlib9component2.component';
@@ -54,7 +55,12 @@ import { Lib1childlib9parentComponent } from './lib1childlib9parent/lib1childlib
 export { Lib1childlib9parentComponent } from './lib1childlib9parent/lib1childlib9parent.component';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild([
+      {path: '', component: Lib1childlib9parentComponent}
+    ])
+  ],
   declarations: [
     Lib1childlib9component0Component,
     Lib1childlib9component1Component,

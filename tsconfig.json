@@ -16,160 +16,65 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@largerepo/app0/lib0/lib0": ["libs/app0/lib0/lib0/src/index.ts"],
-      "@largerepo/app0/lib0/childlib0": [
-        "libs/app0/lib0/childlib0/src/index.ts"
+      "@largerepo/lib0": [
+        "dist/libs/childlib0"
       ],
-      "@largerepo/app0/lib0/childlib1": [
-        "libs/app0/lib0/childlib1/src/index.ts"
+      "@largerepo/lib1": [
+        "dist/libs/app0/lib0/childlib1"
       ],
-      "@largerepo/app0/lib0/childlib2": [
-        "libs/app0/lib0/childlib2/src/index.ts"
+      "@largerepo/lib2": [
+        "dist/libs/app0/lib0/childlib2"
       ],
-      "@largerepo/app0/lib0/childlib3": [
-        "libs/app0/lib0/childlib3/src/index.ts"
+      "@largerepo/lib3": [
+        "dist/libs/app0/lib0/childlib3"
       ],
-      "@largerepo/app0/lib0/childlib4": [
-        "libs/app0/lib0/childlib4/src/index.ts"
+      "@largerepo/lib4": [
+        "dist/libs/app0/lib0/childlib4"
       ],
-      "@largerepo/app0/lib0/childlib5": [
-        "libs/app0/lib0/childlib5/src/index.ts"
+      "@largerepo/lib5": [
+        "dist/libs/app0/lib0/childlib5"
       ],
-      "@largerepo/app0/lib0/childlib6": [
-        "libs/app0/lib0/childlib6/src/index.ts"
+      "@largerepo/lib6": [
+        "dist/libs/app0/lib0/childlib6"
       ],
-      "@largerepo/app0/lib0/childlib7": [
-        "libs/app0/lib0/childlib7/src/index.ts"
+      "@largerepo/lib7": [
+        "dist/libs/app0/lib0/childlib7"
       ],
-      "@largerepo/app0/lib0/childlib8": [
-        "libs/app0/lib0/childlib8/src/index.ts"
+      "@largerepo/lib8": [
+        "dist/libs/app0/lib0/childlib8"
       ],
-      "@largerepo/app0/lib0/childlib9": [
-        "libs/app0/lib0/childlib9/src/index.ts"
+      "@largerepo/lib9": [
+        "dist/libs/app0/lib0/childlib9"
       ],
-      "@largerepo/app0/lib1/lib1": ["libs/app0/lib1/lib1/src/index.ts"],
-      "@largerepo/app0/lib1/childlib0": [
-        "libs/app0/lib1/childlib0/src/index.ts"
+      "@largerepo/lib10": [
+        "dist/libs/app0/lib1/childlib0"
       ],
-      "@largerepo/app0/lib1/childlib1": [
-        "libs/app0/lib1/childlib1/src/index.ts"
+      "@largerepo/lib11": [
+        "dist/libs/app0/lib1/childlib1"
       ],
-      "@largerepo/app0/lib1/childlib2": [
-        "libs/app0/lib1/childlib2/src/index.ts"
+      "@largerepo/lib12": [
+        "dist/libs/app0/lib1/childlib2"
       ],
-      "@largerepo/app0/lib1/childlib3": [
-        "libs/app0/lib1/childlib3/src/index.ts"
+      "@largerepo/lib13": [
+        "dist/libs/app0/lib1/childlib3"
       ],
-      "@largerepo/app0/lib1/childlib4": [
-        "libs/app0/lib1/childlib4/src/index.ts"
+      "@largerepo/lib14": [
+        "dist/libs/app0/lib1/childlib4"
       ],
-      "@largerepo/app0/lib1/childlib5": [
-        "libs/app0/lib1/childlib5/src/index.ts"
+      "@largerepo/lib15": [
+        "dist/libs/app0/lib1/childlib5"
       ],
-      "@largerepo/app0/lib1/childlib6": [
-        "libs/app0/lib1/childlib6/src/index.ts"
+      "@largerepo/lib16": [
+        "dist/libs/app0/lib1/childlib6"
       ],
-      "@largerepo/app0/lib1/childlib7": [
-        "libs/app0/lib1/childlib7/src/index.ts"
+      "@largerepo/lib17": [
+        "dist/libs/app0/lib1/childlib7"
       ],
-      "@largerepo/app0/lib1/childlib8": [
-        "libs/app0/lib1/childlib8/src/index.ts"
+      "@largerepo/lib18": [
+        "dist/libs/app0/lib1/childlib8"
       ],
-      "@largerepo/app0/lib1/childlib9": [
-        "libs/app0/lib1/childlib9/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/lib2": ["libs/app0/lib2/lib2/src/index.ts"],
-      "@largerepo/app0/lib2/childlib0": [
-        "libs/app0/lib2/childlib0/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib1": [
-        "libs/app0/lib2/childlib1/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib2": [
-        "libs/app0/lib2/childlib2/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib3": [
-        "libs/app0/lib2/childlib3/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib4": [
-        "libs/app0/lib2/childlib4/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib5": [
-        "libs/app0/lib2/childlib5/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib6": [
-        "libs/app0/lib2/childlib6/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib7": [
-        "libs/app0/lib2/childlib7/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib8": [
-        "libs/app0/lib2/childlib8/src/index.ts"
-      ],
-      "@largerepo/app0/lib2/childlib9": [
-        "libs/app0/lib2/childlib9/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/lib3": ["libs/app0/lib3/lib3/src/index.ts"],
-      "@largerepo/app0/lib3/childlib0": [
-        "libs/app0/lib3/childlib0/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib1": [
-        "libs/app0/lib3/childlib1/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib2": [
-        "libs/app0/lib3/childlib2/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib3": [
-        "libs/app0/lib3/childlib3/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib4": [
-        "libs/app0/lib3/childlib4/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib5": [
-        "libs/app0/lib3/childlib5/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib6": [
-        "libs/app0/lib3/childlib6/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib7": [
-        "libs/app0/lib3/childlib7/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib8": [
-        "libs/app0/lib3/childlib8/src/index.ts"
-      ],
-      "@largerepo/app0/lib3/childlib9": [
-        "libs/app0/lib3/childlib9/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/lib4": ["libs/app0/lib4/lib4/src/index.ts"],
-      "@largerepo/app0/lib4/childlib0": [
-        "libs/app0/lib4/childlib0/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib1": [
-        "libs/app0/lib4/childlib1/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib2": [
-        "libs/app0/lib4/childlib2/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib3": [
-        "libs/app0/lib4/childlib3/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib4": [
-        "libs/app0/lib4/childlib4/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib5": [
-        "libs/app0/lib4/childlib5/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib6": [
-        "libs/app0/lib4/childlib6/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib7": [
-        "libs/app0/lib4/childlib7/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib8": [
-        "libs/app0/lib4/childlib8/src/index.ts"
-      ],
-      "@largerepo/app0/lib4/childlib9": [
-        "libs/app0/lib4/childlib9/src/index.ts"
+      "@largerepo/lib19": [
+        "dist/libs/app0/lib1/childlib9"
       ]
     }
   },

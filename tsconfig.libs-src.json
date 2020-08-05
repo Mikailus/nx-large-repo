@@ -1,0 +1,83 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "rootDir": ".",
+      "sourceMap": true,
+      "declaration": false,
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "importHelpers": true,
+      "target": "es2015",
+      "module": "esnext",
+      "typeRoots": ["node_modules/@types"],
+      "lib": ["es2017", "dom"],
+      "skipLibCheck": true,
+      "skipDefaultLibCheck": true,
+      "baseUrl": ".",
+      "paths": {
+        "@largerepo/lib0": [
+          "libs/childlib0/src/index.ts"
+        ],
+        "@largerepo/lib1": [
+          "libs/childlib1/src/index.ts"
+        ],
+        "@largerepo/lib2": [
+          "libs/childlib2/src/index.ts"
+        ],
+        "@largerepo/lib3": [
+          "libs/childlib3/src/index.ts"
+        ],
+        "@largerepo/lib4": [
+          "libs/childlib4/src/index.ts"
+        ],
+        "@largerepo/lib5": [
+          "libs/childlib5/src/index.ts"
+        ],
+        "@largerepo/lib6": [
+          "libs/childlib6/src/index.ts"
+        ],
+        "@largerepo/lib7": [
+          "libs/childlib7/src/index.ts"
+        ],
+        "@largerepo/lib8": [
+          "libs/childlib8/src/index.ts"
+        ],
+        "@largerepo/lib9": [
+          "libs/childlib9/src/index.ts"
+        ],
+        "@largerepo/lib10": [
+          "libs/childlib10/src/index.ts"
+        ],
+        "@largerepo/lib11": [
+          "libs/childlib11/src/index.ts"
+        ],
+        "@largerepo/lib12": [
+          "libs/childlib12/src/index.ts"
+        ],
+        "@largerepo/lib13": [
+          "libs/childlib13/src/index.ts"
+        ],
+        "@largerepo/lib14": [
+          "libs/childlib14/src/index.ts"
+        ],
+        "@largerepo/lib15": [
+          "libs/childlib15/src/index.ts"
+        ],
+        "@largerepo/lib16": [
+          "libs/childlib16/src/index.ts"
+        ],
+        "@largerepo/lib17": [
+          "libs/childlib17/src/index.ts"
+        ],
+        "@largerepo/lib18": [
+          "libs/childlib18/src/index.ts"
+        ],
+        "@largerepo/lib19": [
+          "libs/childlib19/src/index.ts"
+        ]
+      }
+    },
+    "exclude": ["node_modules", "tmp"]
+  }
+  
