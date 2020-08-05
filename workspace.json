@@ -1,97 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "app0": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "apps/app0",
-      "sourceRoot": "apps/app0/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/app0",
-            "index": "apps/app0/src/index.html",
-            "main": "apps/app0/src/main.ts",
-            "polyfills": "apps/app0/src/polyfills.ts",
-            "tsConfig": "apps/app0/tsconfig.app.json",
-            "aot": true,
-            "assets": ["apps/app0/src/favicon.ico", "apps/app0/src/assets"],
-            "styles": ["apps/app0/src/styles.css"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/app0/src/environments/environment.ts",
-                  "with": "apps/app0/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/workspace:run-commands",
-          "options": {
-            "commands": [
-              {
-                "command": "node ./tools/scripts/watch.js"
-              },
-              {
-                "command": "http-server dist/apps/app0 --port=4200"
-              }
-            ]
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "app0:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/app0/tsconfig.app.json",
-              "apps/app0/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/app0/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/app0/jest.config.js",
-            "tsConfig": "apps/app0/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/app0/src/test-setup.ts"
-          }
-        }
-      }
-    },
     "app1": {
       "projectType": "application",
       "schematics": {},
@@ -181,61 +90,21 @@
         }
       }
     },
-    "app0-lib0-lib0": {
-      "projectType": "library",
-      "root": "libs/app0/lib0/lib0",
-      "sourceRoot": "libs/app0/lib0/lib0/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib0/lib0/tsconfig.lib.json",
-            "project": "libs/app0/lib0/lib0/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib0/lib0/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib0/lib0/tsconfig.lib.json",
-              "libs/app0/lib0/lib0/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/lib0/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib0/lib0/jest.config.js",
-            "tsConfig": "libs/app0/lib0/lib0/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/lib0/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
     "app0-lib0-childlib0": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib0",
-      "sourceRoot": "libs/app0/lib0/childlib0/src",
+      "root": "libs/childlib0",
+      "sourceRoot": "libs/childlib0/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib0/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib0/ng-package.json"
+            "tsConfig": "libs/childlib0/tsconfig.lib.json",
+            "project": "libs/childlib0/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib0/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib0/tsconfig.lib.prod.json"
             }
           }
         },
@@ -243,19 +112,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib0/tsconfig.lib.json",
-              "libs/app0/lib0/childlib0/tsconfig.spec.json"
+              "libs/childlib0/tsconfig.lib.json",
+              "libs/childlib0/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib0/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib0/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib0/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib0/tsconfig.spec.json",
+            "jestConfig": "libs/childlib0/jest.config.js",
+            "tsConfig": "libs/childlib0/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib0/src/test-setup.ts"
+            "setupFile": "libs/childlib0/src/test-setup.ts"
           }
         }
       },
@@ -263,19 +132,19 @@
     },
     "app0-lib0-childlib1": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib1",
-      "sourceRoot": "libs/app0/lib0/childlib1/src",
+      "root": "libs/childlib1",
+      "sourceRoot": "libs/childlib1/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib1/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib1/ng-package.json"
+            "tsConfig": "libs/childlib1/tsconfig.lib.json",
+            "project": "libs/childlib1/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib1/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib1/tsconfig.lib.prod.json"
             }
           }
         },
@@ -283,19 +152,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib1/tsconfig.lib.json",
-              "libs/app0/lib0/childlib1/tsconfig.spec.json"
+              "libs/childlib1/tsconfig.lib.json",
+              "libs/childlib1/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib1/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib1/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib1/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib1/tsconfig.spec.json",
+            "jestConfig": "libs/childlib1/jest.config.js",
+            "tsConfig": "libs/childlib1/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib1/src/test-setup.ts"
+            "setupFile": "libs/childlib1/src/test-setup.ts"
           }
         }
       },
@@ -303,19 +172,19 @@
     },
     "app0-lib0-childlib2": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib2",
-      "sourceRoot": "libs/app0/lib0/childlib2/src",
+      "root": "libs/childlib2",
+      "sourceRoot": "libs/childlib2/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib2/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib2/ng-package.json"
+            "tsConfig": "libs/childlib2/tsconfig.lib.json",
+            "project": "libs/childlib2/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib2/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib2/tsconfig.lib.prod.json"
             }
           }
         },
@@ -323,19 +192,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib2/tsconfig.lib.json",
-              "libs/app0/lib0/childlib2/tsconfig.spec.json"
+              "libs/childlib2/tsconfig.lib.json",
+              "libs/childlib2/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib2/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib2/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib2/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib2/tsconfig.spec.json",
+            "jestConfig": "libs/childlib2/jest.config.js",
+            "tsConfig": "libs/childlib2/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib2/src/test-setup.ts"
+            "setupFile": "libs/childlib2/src/test-setup.ts"
           }
         }
       },
@@ -343,19 +212,19 @@
     },
     "app0-lib0-childlib3": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib3",
-      "sourceRoot": "libs/app0/lib0/childlib3/src",
+      "root": "libs/childlib3",
+      "sourceRoot": "libs/childlib3/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib3/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib3/ng-package.json"
+            "tsConfig": "libs/childlib3/tsconfig.lib.json",
+            "project": "libs/childlib3/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib3/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib3/tsconfig.lib.prod.json"
             }
           }
         },
@@ -363,19 +232,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib3/tsconfig.lib.json",
-              "libs/app0/lib0/childlib3/tsconfig.spec.json"
+              "libs/childlib3/tsconfig.lib.json",
+              "libs/childlib3/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib3/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib3/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib3/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib3/tsconfig.spec.json",
+            "jestConfig": "libs/childlib3/jest.config.js",
+            "tsConfig": "libs/childlib3/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib3/src/test-setup.ts"
+            "setupFile": "libs/childlib3/src/test-setup.ts"
           }
         }
       },
@@ -383,19 +252,19 @@
     },
     "app0-lib0-childlib4": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib4",
-      "sourceRoot": "libs/app0/lib0/childlib4/src",
+      "root": "libs/childlib4",
+      "sourceRoot": "libs/childlib4/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib4/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib4/ng-package.json"
+            "tsConfig": "libs/childlib4/tsconfig.lib.json",
+            "project": "libs/childlib4/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib4/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib4/tsconfig.lib.prod.json"
             }
           }
         },
@@ -403,19 +272,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib4/tsconfig.lib.json",
-              "libs/app0/lib0/childlib4/tsconfig.spec.json"
+              "libs/childlib4/tsconfig.lib.json",
+              "libs/childlib4/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib4/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib4/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib4/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib4/tsconfig.spec.json",
+            "jestConfig": "libs/childlib4/jest.config.js",
+            "tsConfig": "libs/childlib4/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib4/src/test-setup.ts"
+            "setupFile": "libs/childlib4/src/test-setup.ts"
           }
         }
       },
@@ -423,19 +292,19 @@
     },
     "app0-lib0-childlib5": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib5",
-      "sourceRoot": "libs/app0/lib0/childlib5/src",
+      "root": "libs/childlib5",
+      "sourceRoot": "libs/childlib5/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib5/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib5/ng-package.json"
+            "tsConfig": "libs/childlib5/tsconfig.lib.json",
+            "project": "libs/childlib5/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib5/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib5/tsconfig.lib.prod.json"
             }
           }
         },
@@ -443,19 +312,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib5/tsconfig.lib.json",
-              "libs/app0/lib0/childlib5/tsconfig.spec.json"
+              "libs/childlib5/tsconfig.lib.json",
+              "libs/childlib5/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib5/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib5/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib5/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib5/tsconfig.spec.json",
+            "jestConfig": "libs/childlib5/jest.config.js",
+            "tsConfig": "libs/childlib5/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib5/src/test-setup.ts"
+            "setupFile": "libs/childlib5/src/test-setup.ts"
           }
         }
       },
@@ -463,19 +332,19 @@
     },
     "app0-lib0-childlib6": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib6",
-      "sourceRoot": "libs/app0/lib0/childlib6/src",
+      "root": "libs/childlib6",
+      "sourceRoot": "libs/childlib6/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib6/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib6/ng-package.json"
+            "tsConfig": "libs/childlib6/tsconfig.lib.json",
+            "project": "libs/childlib6/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib6/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib6/tsconfig.lib.prod.json"
             }
           }
         },
@@ -483,19 +352,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib6/tsconfig.lib.json",
-              "libs/app0/lib0/childlib6/tsconfig.spec.json"
+              "libs/childlib6/tsconfig.lib.json",
+              "libs/childlib6/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib6/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib6/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib6/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib6/tsconfig.spec.json",
+            "jestConfig": "libs/childlib6/jest.config.js",
+            "tsConfig": "libs/childlib6/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib6/src/test-setup.ts"
+            "setupFile": "libs/childlib6/src/test-setup.ts"
           }
         }
       },
@@ -503,19 +372,19 @@
     },
     "app0-lib0-childlib7": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib7",
-      "sourceRoot": "libs/app0/lib0/childlib7/src",
+      "root": "libs/childlib7",
+      "sourceRoot": "libs/childlib7/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib7/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib7/ng-package.json"
+            "tsConfig": "libs/childlib7/tsconfig.lib.json",
+            "project": "libs/childlib7/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib7/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib7/tsconfig.lib.prod.json"
             }
           }
         },
@@ -523,19 +392,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib7/tsconfig.lib.json",
-              "libs/app0/lib0/childlib7/tsconfig.spec.json"
+              "libs/childlib7/tsconfig.lib.json",
+              "libs/childlib7/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib7/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib7/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib7/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib7/tsconfig.spec.json",
+            "jestConfig": "libs/childlib7/jest.config.js",
+            "tsConfig": "libs/childlib7/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib7/src/test-setup.ts"
+            "setupFile": "libs/childlib7/src/test-setup.ts"
           }
         }
       },
@@ -543,19 +412,19 @@
     },
     "app0-lib0-childlib8": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib8",
-      "sourceRoot": "libs/app0/lib0/childlib8/src",
+      "root": "libs/childlib8",
+      "sourceRoot": "libs/childlib8/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib8/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib8/ng-package.json"
+            "tsConfig": "libs/childlib8/tsconfig.lib.json",
+            "project": "libs/childlib8/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib8/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib8/tsconfig.lib.prod.json"
             }
           }
         },
@@ -563,19 +432,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib8/tsconfig.lib.json",
-              "libs/app0/lib0/childlib8/tsconfig.spec.json"
+              "libs/childlib8/tsconfig.lib.json",
+              "libs/childlib8/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib8/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib8/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib8/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib8/tsconfig.spec.json",
+            "jestConfig": "libs/childlib8/jest.config.js",
+            "tsConfig": "libs/childlib8/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib8/src/test-setup.ts"
+            "setupFile": "libs/childlib8/src/test-setup.ts"
           }
         }
       },
@@ -583,19 +452,19 @@
     },
     "app0-lib0-childlib9": {
       "projectType": "library",
-      "root": "libs/app0/lib0/childlib9",
-      "sourceRoot": "libs/app0/lib0/childlib9/src",
+      "root": "libs/childlib9",
+      "sourceRoot": "libs/childlib9/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib0/childlib9/tsconfig.lib.json",
-            "project": "libs/app0/lib0/childlib9/ng-package.json"
+            "tsConfig": "libs/childlib9/tsconfig.lib.json",
+            "project": "libs/childlib9/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib0/childlib9/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib9/tsconfig.lib.prod.json"
             }
           }
         },
@@ -603,59 +472,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib0/childlib9/tsconfig.lib.json",
-              "libs/app0/lib0/childlib9/tsconfig.spec.json"
+              "libs/childlib9/tsconfig.lib.json",
+              "libs/childlib9/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib0/childlib9/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib9/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib0/childlib9/jest.config.js",
-            "tsConfig": "libs/app0/lib0/childlib9/tsconfig.spec.json",
+            "jestConfig": "libs/childlib9/jest.config.js",
+            "tsConfig": "libs/childlib9/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib0/childlib9/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib1-lib1": {
-      "projectType": "library",
-      "root": "libs/app0/lib1/lib1",
-      "sourceRoot": "libs/app0/lib1/lib1/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib1/lib1/tsconfig.lib.json",
-            "project": "libs/app0/lib1/lib1/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib1/lib1/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib1/lib1/tsconfig.lib.json",
-              "libs/app0/lib1/lib1/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/lib1/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib1/lib1/jest.config.js",
-            "tsConfig": "libs/app0/lib1/lib1/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/lib1/src/test-setup.ts"
+            "setupFile": "libs/childlib9/src/test-setup.ts"
           }
         }
       },
@@ -663,19 +492,19 @@
     },
     "app0-lib1-childlib0": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib0",
-      "sourceRoot": "libs/app0/lib1/childlib0/src",
+      "root": "libs/childlib10",
+      "sourceRoot": "libs/childlib10/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib0/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib0/ng-package.json"
+            "tsConfig": "libs/childlib10/tsconfig.lib.json",
+            "project": "libs/childlib10/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib0/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib10/tsconfig.lib.prod.json"
             }
           }
         },
@@ -683,19 +512,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib0/tsconfig.lib.json",
-              "libs/app0/lib1/childlib0/tsconfig.spec.json"
+              "libs/childlib10/tsconfig.lib.json",
+              "libs/childlib10/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib0/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib10/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib0/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib0/tsconfig.spec.json",
+            "jestConfig": "libs/childlib10/jest.config.js",
+            "tsConfig": "libs/childlib10/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib0/src/test-setup.ts"
+            "setupFile": "libs/childlib10/src/test-setup.ts"
           }
         }
       },
@@ -703,19 +532,19 @@
     },
     "app0-lib1-childlib1": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib1",
-      "sourceRoot": "libs/app0/lib1/childlib1/src",
+      "root": "libs/childlib11",
+      "sourceRoot": "libs/childlib11/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib1/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib1/ng-package.json"
+            "tsConfig": "libs/childlib11/tsconfig.lib.json",
+            "project": "libs/childlib11/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib1/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib11/tsconfig.lib.prod.json"
             }
           }
         },
@@ -723,19 +552,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib1/tsconfig.lib.json",
-              "libs/app0/lib1/childlib1/tsconfig.spec.json"
+              "libs/childlib11/tsconfig.lib.json",
+              "libs/childlib11/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib1/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib11/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib1/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib1/tsconfig.spec.json",
+            "jestConfig": "libs/childlib11/jest.config.js",
+            "tsConfig": "libs/childlib11/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib1/src/test-setup.ts"
+            "setupFile": "libs/childlib11/src/test-setup.ts"
           }
         }
       },
@@ -743,19 +572,19 @@
     },
     "app0-lib1-childlib2": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib2",
-      "sourceRoot": "libs/app0/lib1/childlib2/src",
+      "root": "libs/childlib12",
+      "sourceRoot": "libs/childlib12/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib2/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib2/ng-package.json"
+            "tsConfig": "libs/childlib12/tsconfig.lib.json",
+            "project": "libs/childlib12/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib2/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib12/tsconfig.lib.prod.json"
             }
           }
         },
@@ -763,19 +592,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib2/tsconfig.lib.json",
-              "libs/app0/lib1/childlib2/tsconfig.spec.json"
+              "libs/childlib12/tsconfig.lib.json",
+              "libs/childlib12/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib2/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib12/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib2/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib2/tsconfig.spec.json",
+            "jestConfig": "libs/childlib12/jest.config.js",
+            "tsConfig": "libs/childlib12/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib2/src/test-setup.ts"
+            "setupFile": "libs/childlib12/src/test-setup.ts"
           }
         }
       },
@@ -783,19 +612,19 @@
     },
     "app0-lib1-childlib3": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib3",
-      "sourceRoot": "libs/app0/lib1/childlib3/src",
+      "root": "libs/childlib13",
+      "sourceRoot": "libs/childlib13/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib3/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib3/ng-package.json"
+            "tsConfig": "libs/childlib13/tsconfig.lib.json",
+            "project": "libs/childlib13/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib3/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib13/tsconfig.lib.prod.json"
             }
           }
         },
@@ -803,19 +632,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib3/tsconfig.lib.json",
-              "libs/app0/lib1/childlib3/tsconfig.spec.json"
+              "libs/childlib13/tsconfig.lib.json",
+              "libs/childlib13/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib3/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib13/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib3/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib3/tsconfig.spec.json",
+            "jestConfig": "libs/childlib13/jest.config.js",
+            "tsConfig": "libs/childlib13/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib3/src/test-setup.ts"
+            "setupFile": "libs/childlib13/src/test-setup.ts"
           }
         }
       },
@@ -823,19 +652,19 @@
     },
     "app0-lib1-childlib4": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib4",
-      "sourceRoot": "libs/app0/lib1/childlib4/src",
+      "root": "libs/childlib14",
+      "sourceRoot": "libs/childlib14/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib4/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib4/ng-package.json"
+            "tsConfig": "libs/childlib14/tsconfig.lib.json",
+            "project": "libs/childlib14/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib4/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib14/tsconfig.lib.prod.json"
             }
           }
         },
@@ -843,19 +672,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib4/tsconfig.lib.json",
-              "libs/app0/lib1/childlib4/tsconfig.spec.json"
+              "libs/childlib14/tsconfig.lib.json",
+              "libs/childlib14/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib4/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib14/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib4/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib4/tsconfig.spec.json",
+            "jestConfig": "libs/childlib14/jest.config.js",
+            "tsConfig": "libs/childlib14/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib4/src/test-setup.ts"
+            "setupFile": "libs/childlib14/src/test-setup.ts"
           }
         }
       },
@@ -863,19 +692,19 @@
     },
     "app0-lib1-childlib5": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib5",
-      "sourceRoot": "libs/app0/lib1/childlib5/src",
+      "root": "libs/childlib15",
+      "sourceRoot": "libs/childlib15/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib5/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib5/ng-package.json"
+            "tsConfig": "libs/childlib15/tsconfig.lib.json",
+            "project": "libs/childlib15/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib5/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib15/tsconfig.lib.prod.json"
             }
           }
         },
@@ -883,19 +712,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib5/tsconfig.lib.json",
-              "libs/app0/lib1/childlib5/tsconfig.spec.json"
+              "libs/childlib15/tsconfig.lib.json",
+              "libs/childlib15/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib5/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib15/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib5/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib5/tsconfig.spec.json",
+            "jestConfig": "libs/childlib15/jest.config.js",
+            "tsConfig": "libs/childlib15/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib5/src/test-setup.ts"
+            "setupFile": "libs/childlib15/src/test-setup.ts"
           }
         }
       },
@@ -903,19 +732,19 @@
     },
     "app0-lib1-childlib6": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib6",
-      "sourceRoot": "libs/app0/lib1/childlib6/src",
+      "root": "libs/childlib16",
+      "sourceRoot": "libs/childlib16/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib6/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib6/ng-package.json"
+            "tsConfig": "libs/childlib16/tsconfig.lib.json",
+            "project": "libs/childlib16/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib6/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib16/tsconfig.lib.prod.json"
             }
           }
         },
@@ -923,19 +752,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib6/tsconfig.lib.json",
-              "libs/app0/lib1/childlib6/tsconfig.spec.json"
+              "libs/childlib16/tsconfig.lib.json",
+              "libs/childlib16/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib6/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib16/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib6/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib6/tsconfig.spec.json",
+            "jestConfig": "libs/childlib16/jest.config.js",
+            "tsConfig": "libs/childlib16/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib6/src/test-setup.ts"
+            "setupFile": "libs/childlib16/src/test-setup.ts"
           }
         }
       },
@@ -943,19 +772,19 @@
     },
     "app0-lib1-childlib7": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib7",
-      "sourceRoot": "libs/app0/lib1/childlib7/src",
+      "root": "libs/childlib17",
+      "sourceRoot": "libs/childlib17/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib7/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib7/ng-package.json"
+            "tsConfig": "libs/childlib17/tsconfig.lib.json",
+            "project": "libs/childlib17/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib7/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib17/tsconfig.lib.prod.json"
             }
           }
         },
@@ -963,19 +792,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib7/tsconfig.lib.json",
-              "libs/app0/lib1/childlib7/tsconfig.spec.json"
+              "libs/childlib17/tsconfig.lib.json",
+              "libs/childlib17/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib7/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib17/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib7/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib7/tsconfig.spec.json",
+            "jestConfig": "libs/childlib17/jest.config.js",
+            "tsConfig": "libs/childlib17/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib7/src/test-setup.ts"
+            "setupFile": "libs/childlib17/src/test-setup.ts"
           }
         }
       },
@@ -983,19 +812,19 @@
     },
     "app0-lib1-childlib8": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib8",
-      "sourceRoot": "libs/app0/lib1/childlib8/src",
+      "root": "libs/childlib18",
+      "sourceRoot": "libs/childlib18/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib8/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib8/ng-package.json"
+            "tsConfig": "libs/childlib18/tsconfig.lib.json",
+            "project": "libs/childlib18/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib8/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib18/tsconfig.lib.prod.json"
             }
           }
         },
@@ -1003,19 +832,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib8/tsconfig.lib.json",
-              "libs/app0/lib1/childlib8/tsconfig.spec.json"
+              "libs/childlib18/tsconfig.lib.json",
+              "libs/childlib18/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib8/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib18/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib8/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib8/tsconfig.spec.json",
+            "jestConfig": "libs/childlib18/jest.config.js",
+            "tsConfig": "libs/childlib18/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib8/src/test-setup.ts"
+            "setupFile": "libs/childlib18/src/test-setup.ts"
           }
         }
       },
@@ -1023,19 +852,19 @@
     },
     "app0-lib1-childlib9": {
       "projectType": "library",
-      "root": "libs/app0/lib1/childlib9",
-      "sourceRoot": "libs/app0/lib1/childlib9/src",
+      "root": "libs/childlib19",
+      "sourceRoot": "libs/childlib19/src",
       "prefix": "largerepo",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/app0/lib1/childlib9/tsconfig.lib.json",
-            "project": "libs/app0/lib1/childlib9/ng-package.json"
+            "tsConfig": "libs/childlib19/tsconfig.lib.json",
+            "project": "libs/childlib19/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/app0/lib1/childlib9/tsconfig.lib.prod.json"
+              "tsConfig": "libs/childlib19/tsconfig.lib.prod.json"
             }
           }
         },
@@ -1043,1339 +872,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/app0/lib1/childlib9/tsconfig.lib.json",
-              "libs/app0/lib1/childlib9/tsconfig.spec.json"
+              "libs/childlib9/tsconfig.lib.json",
+              "libs/childlib9/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib1/childlib9/**"]
+            "exclude": ["**/node_modules/**", "!libs/childlib19/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/app0/lib1/childlib9/jest.config.js",
-            "tsConfig": "libs/app0/lib1/childlib9/tsconfig.spec.json",
+            "jestConfig": "libs/childlib19/jest.config.js",
+            "tsConfig": "libs/childlib19/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/app0/lib1/childlib9/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-lib2": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/lib2",
-      "sourceRoot": "libs/app0/lib2/lib2/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/lib2/tsconfig.lib.json",
-            "project": "libs/app0/lib2/lib2/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/lib2/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/lib2/tsconfig.lib.json",
-              "libs/app0/lib2/lib2/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/lib2/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/lib2/jest.config.js",
-            "tsConfig": "libs/app0/lib2/lib2/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/lib2/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib0": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib0",
-      "sourceRoot": "libs/app0/lib2/childlib0/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib0/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib0/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib0/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib0/tsconfig.lib.json",
-              "libs/app0/lib2/childlib0/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib0/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib0/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib0/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib0/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib1": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib1",
-      "sourceRoot": "libs/app0/lib2/childlib1/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib1/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib1/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib1/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib1/tsconfig.lib.json",
-              "libs/app0/lib2/childlib1/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib1/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib1/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib1/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib1/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib2": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib2",
-      "sourceRoot": "libs/app0/lib2/childlib2/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib2/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib2/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib2/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib2/tsconfig.lib.json",
-              "libs/app0/lib2/childlib2/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib2/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib2/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib2/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib2/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib3": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib3",
-      "sourceRoot": "libs/app0/lib2/childlib3/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib3/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib3/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib3/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib3/tsconfig.lib.json",
-              "libs/app0/lib2/childlib3/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib3/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib3/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib3/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib3/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib4": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib4",
-      "sourceRoot": "libs/app0/lib2/childlib4/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib4/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib4/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib4/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib4/tsconfig.lib.json",
-              "libs/app0/lib2/childlib4/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib4/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib4/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib4/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib4/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib5": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib5",
-      "sourceRoot": "libs/app0/lib2/childlib5/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib5/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib5/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib5/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib5/tsconfig.lib.json",
-              "libs/app0/lib2/childlib5/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib5/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib5/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib5/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib5/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib6": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib6",
-      "sourceRoot": "libs/app0/lib2/childlib6/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib6/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib6/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib6/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib6/tsconfig.lib.json",
-              "libs/app0/lib2/childlib6/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib6/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib6/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib6/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib6/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib7": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib7",
-      "sourceRoot": "libs/app0/lib2/childlib7/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib7/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib7/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib7/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib7/tsconfig.lib.json",
-              "libs/app0/lib2/childlib7/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib7/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib7/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib7/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib7/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib8": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib8",
-      "sourceRoot": "libs/app0/lib2/childlib8/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib8/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib8/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib8/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib8/tsconfig.lib.json",
-              "libs/app0/lib2/childlib8/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib8/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib8/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib8/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib8/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib2-childlib9": {
-      "projectType": "library",
-      "root": "libs/app0/lib2/childlib9",
-      "sourceRoot": "libs/app0/lib2/childlib9/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib2/childlib9/tsconfig.lib.json",
-            "project": "libs/app0/lib2/childlib9/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib2/childlib9/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib2/childlib9/tsconfig.lib.json",
-              "libs/app0/lib2/childlib9/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib2/childlib9/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib2/childlib9/jest.config.js",
-            "tsConfig": "libs/app0/lib2/childlib9/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib2/childlib9/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-lib3": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/lib3",
-      "sourceRoot": "libs/app0/lib3/lib3/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/lib3/tsconfig.lib.json",
-            "project": "libs/app0/lib3/lib3/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/lib3/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/lib3/tsconfig.lib.json",
-              "libs/app0/lib3/lib3/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/lib3/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/lib3/jest.config.js",
-            "tsConfig": "libs/app0/lib3/lib3/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/lib3/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib0": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib0",
-      "sourceRoot": "libs/app0/lib3/childlib0/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib0/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib0/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib0/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib0/tsconfig.lib.json",
-              "libs/app0/lib3/childlib0/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib0/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib0/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib0/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib0/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib1": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib1",
-      "sourceRoot": "libs/app0/lib3/childlib1/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib1/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib1/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib1/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib1/tsconfig.lib.json",
-              "libs/app0/lib3/childlib1/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib1/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib1/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib1/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib1/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib2": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib2",
-      "sourceRoot": "libs/app0/lib3/childlib2/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib2/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib2/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib2/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib2/tsconfig.lib.json",
-              "libs/app0/lib3/childlib2/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib2/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib2/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib2/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib2/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib3": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib3",
-      "sourceRoot": "libs/app0/lib3/childlib3/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib3/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib3/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib3/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib3/tsconfig.lib.json",
-              "libs/app0/lib3/childlib3/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib3/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib3/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib3/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib3/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib4": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib4",
-      "sourceRoot": "libs/app0/lib3/childlib4/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib4/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib4/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib4/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib4/tsconfig.lib.json",
-              "libs/app0/lib3/childlib4/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib4/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib4/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib4/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib4/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib5": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib5",
-      "sourceRoot": "libs/app0/lib3/childlib5/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib5/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib5/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib5/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib5/tsconfig.lib.json",
-              "libs/app0/lib3/childlib5/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib5/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib5/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib5/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib5/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib6": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib6",
-      "sourceRoot": "libs/app0/lib3/childlib6/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib6/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib6/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib6/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib6/tsconfig.lib.json",
-              "libs/app0/lib3/childlib6/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib6/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib6/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib6/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib6/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib7": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib7",
-      "sourceRoot": "libs/app0/lib3/childlib7/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib7/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib7/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib7/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib7/tsconfig.lib.json",
-              "libs/app0/lib3/childlib7/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib7/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib7/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib7/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib7/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib8": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib8",
-      "sourceRoot": "libs/app0/lib3/childlib8/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib8/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib8/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib8/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib8/tsconfig.lib.json",
-              "libs/app0/lib3/childlib8/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib8/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib8/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib8/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib8/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib3-childlib9": {
-      "projectType": "library",
-      "root": "libs/app0/lib3/childlib9",
-      "sourceRoot": "libs/app0/lib3/childlib9/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib3/childlib9/tsconfig.lib.json",
-            "project": "libs/app0/lib3/childlib9/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib3/childlib9/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib3/childlib9/tsconfig.lib.json",
-              "libs/app0/lib3/childlib9/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib3/childlib9/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib3/childlib9/jest.config.js",
-            "tsConfig": "libs/app0/lib3/childlib9/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib3/childlib9/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-lib4": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/lib4",
-      "sourceRoot": "libs/app0/lib4/lib4/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/lib4/tsconfig.lib.json",
-            "project": "libs/app0/lib4/lib4/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/lib4/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/lib4/tsconfig.lib.json",
-              "libs/app0/lib4/lib4/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/lib4/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/lib4/jest.config.js",
-            "tsConfig": "libs/app0/lib4/lib4/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/lib4/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib0": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib0",
-      "sourceRoot": "libs/app0/lib4/childlib0/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib0/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib0/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib0/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib0/tsconfig.lib.json",
-              "libs/app0/lib4/childlib0/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib0/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib0/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib0/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib0/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib1": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib1",
-      "sourceRoot": "libs/app0/lib4/childlib1/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib1/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib1/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib1/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib1/tsconfig.lib.json",
-              "libs/app0/lib4/childlib1/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib1/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib1/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib1/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib1/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib2": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib2",
-      "sourceRoot": "libs/app0/lib4/childlib2/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib2/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib2/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib2/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib2/tsconfig.lib.json",
-              "libs/app0/lib4/childlib2/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib2/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib2/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib2/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib2/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib3": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib3",
-      "sourceRoot": "libs/app0/lib4/childlib3/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib3/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib3/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib3/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib3/tsconfig.lib.json",
-              "libs/app0/lib4/childlib3/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib3/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib3/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib3/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib3/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib4": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib4",
-      "sourceRoot": "libs/app0/lib4/childlib4/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib4/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib4/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib4/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib4/tsconfig.lib.json",
-              "libs/app0/lib4/childlib4/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib4/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib4/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib4/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib4/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib5": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib5",
-      "sourceRoot": "libs/app0/lib4/childlib5/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib5/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib5/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib5/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib5/tsconfig.lib.json",
-              "libs/app0/lib4/childlib5/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib5/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib5/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib5/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib5/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib6": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib6",
-      "sourceRoot": "libs/app0/lib4/childlib6/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib6/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib6/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib6/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib6/tsconfig.lib.json",
-              "libs/app0/lib4/childlib6/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib6/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib6/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib6/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib6/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib7": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib7",
-      "sourceRoot": "libs/app0/lib4/childlib7/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib7/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib7/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib7/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib7/tsconfig.lib.json",
-              "libs/app0/lib4/childlib7/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib7/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib7/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib7/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib7/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib8": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib8",
-      "sourceRoot": "libs/app0/lib4/childlib8/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib8/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib8/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib8/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib8/tsconfig.lib.json",
-              "libs/app0/lib4/childlib8/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib8/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib8/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib8/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib8/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "app0-lib4-childlib9": {
-      "projectType": "library",
-      "root": "libs/app0/lib4/childlib9",
-      "sourceRoot": "libs/app0/lib4/childlib9/src",
-      "prefix": "largerepo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/app0/lib4/childlib9/tsconfig.lib.json",
-            "project": "libs/app0/lib4/childlib9/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/app0/lib4/childlib9/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/app0/lib4/childlib9/tsconfig.lib.json",
-              "libs/app0/lib4/childlib9/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/app0/lib4/childlib9/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/app0/lib4/childlib9/jest.config.js",
-            "tsConfig": "libs/app0/lib4/childlib9/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/app0/lib4/childlib9/src/test-setup.ts"
+            "setupFile": "libs/childlib19/src/test-setup.ts"
           }
         }
       },
