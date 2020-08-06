@@ -15,7 +15,7 @@
             "index": "apps/app1/src/index.html",
             "main": "apps/app1/src/main.ts",
             "polyfills": "apps/app1/src/polyfills.ts",
-            "tsConfig": "apps/app1/tsconfig.app.json",
+            "tsConfig": "apps/app1/tsconfig.build.json",
             "aot": true,
             "assets": ["apps/app1/src/favicon.ico", "apps/app1/src/assets"],
             "styles": ["apps/app1/src/styles.css"],
@@ -49,13 +49,16 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "serve": {
+              "tsConfig": "apps/app1/tsconfig.serve.json"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app1:build"
+            "browserTarget": "app1:build:serve"
           },
           "configurations": {
             "production": {

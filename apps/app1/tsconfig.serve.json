@@ -2,8 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "module": "commonjs",
-    "types": ["jest", "node"],
+    "types": [],
     "paths": {
       "@largerepo/lib0": [
         "libs/childlib0/src/index.ts"
@@ -67,6 +66,5 @@
       ]
     }
   },
-  "files": ["src/test-setup.ts"],
-  "include": ["**/*.spec.ts", "**/*.d.ts"]
+  "files": ["src/main.ts", "src/polyfills.ts"]
 }

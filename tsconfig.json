@@ -15,68 +15,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@largerepo/lib0": [
-        "dist/libs/childlib0"
-      ],
-      "@largerepo/lib1": [
-        "dist/libs/app0/lib0/childlib1"
-      ],
-      "@largerepo/lib2": [
-        "dist/libs/app0/lib0/childlib2"
-      ],
-      "@largerepo/lib3": [
-        "dist/libs/app0/lib0/childlib3"
-      ],
-      "@largerepo/lib4": [
-        "dist/libs/app0/lib0/childlib4"
-      ],
-      "@largerepo/lib5": [
-        "dist/libs/app0/lib0/childlib5"
-      ],
-      "@largerepo/lib6": [
-        "dist/libs/app0/lib0/childlib6"
-      ],
-      "@largerepo/lib7": [
-        "dist/libs/app0/lib0/childlib7"
-      ],
-      "@largerepo/lib8": [
-        "dist/libs/app0/lib0/childlib8"
-      ],
-      "@largerepo/lib9": [
-        "dist/libs/app0/lib0/childlib9"
-      ],
-      "@largerepo/lib10": [
-        "dist/libs/app0/lib1/childlib0"
-      ],
-      "@largerepo/lib11": [
-        "dist/libs/app0/lib1/childlib1"
-      ],
-      "@largerepo/lib12": [
-        "dist/libs/app0/lib1/childlib2"
-      ],
-      "@largerepo/lib13": [
-        "dist/libs/app0/lib1/childlib3"
-      ],
-      "@largerepo/lib14": [
-        "dist/libs/app0/lib1/childlib4"
-      ],
-      "@largerepo/lib15": [
-        "dist/libs/app0/lib1/childlib5"
-      ],
-      "@largerepo/lib16": [
-        "dist/libs/app0/lib1/childlib6"
-      ],
-      "@largerepo/lib17": [
-        "dist/libs/app0/lib1/childlib7"
-      ],
-      "@largerepo/lib18": [
-        "dist/libs/app0/lib1/childlib8"
-      ],
-      "@largerepo/lib19": [
-        "dist/libs/app0/lib1/childlib9"
-      ]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }
